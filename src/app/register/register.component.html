@@ -1,0 +1,39 @@
+<h3>Zarejestruj się</h3>
+<hr />
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div>
+    <label for="userName">Nazwa użytkownika</label>
+    <input type="text" class="form-control" id="userName" formControlName="userName">
+    <div *ngIf="!registerForm.get('userName').valid && registerForm.get('userName').touched" style="color:red">
+      Nazwa użytkownika jest wymagana!
+    </div>
+
+  </div>
+  <div>
+    <label for="homeName">Nazwa domu</label>
+    <input type="text" class="form-control" id="homeName" formControlName="homeName">
+    <div *ngIf="!registerForm.get('homeName').valid && registerForm.get('homeName').touched" style="color:red">
+      Nazwij swój dom. Pole wymagane!
+    </div>
+  </div>
+  <div>
+    <label for="password">Hasło</label>
+    <input type="password" class="form-control" id="password" formControlName="password">
+    <div *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched" style="color:red">
+      Wprowadź hasło!
+    </div>
+  </div>
+  <div>
+    <label for="confirmPassword">Potwierdź hasło</label>
+    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+    <div *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched" style="color:red">
+      Podane hasła nie są identyczne!
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button class="btn btn-success" type="submit" [disabled]="!registerForm.valid">Zarejestruj</button>
+  </div>
+</form>
+

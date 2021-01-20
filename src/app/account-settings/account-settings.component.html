@@ -1,0 +1,16 @@
+ <div>
+  <div class="col-4 justify-content-center">
+    <h3 class=" text-primary">Ustawienia konta</h3>
+  </div>
+  <div class="col-8">
+    <hr />
+  </div>
+  <div class="col-6">
+    <div class="input-group justify-content-center mb-3">
+      <input type="text" class="form-control" [value]="user.homeName|titlecase" [disabled]="homeNameField">
+      <span *ngIf="homeNameField" class="btn btn-info" (click)="changeHomeNameField()">Zmień</span>
+      <span *ngIf="!homeNameField" class="btn btn-success" >Zapisz zmiany</span>
+    </div>
+  </div>
+</div>
+
